@@ -1,0 +1,44 @@
+---
+
+# Certificate configuration
+- name: Create certificate location
+  command: "mkdir -p {{ stackmon_certs_location }}"
+
+- name: Certificate location
+  file:
+    state: directory
+    path: "{{ stackmon_certs_location }}"
+    owner: root
+    group: root
+    mode: 0700
+
+- name: OpenSSL package
+  package:
+    state: present
+    name: openssl
+
+# Elastic search certificate configuration
+- name: Elastic certificate configuration
+  include_tasks: cert_individual.yml
+  vars:
+    openssl_cert_name: "elastic"
+
+# Kibana certificate configuration
+- name: Kibana certificate configuration
+  include_tasks: cert_individual.yml
+  vars:
+    openssl_cert_name: "kibana"
+
+# Registry certificate configuration
+- name: Registry certificate configuration
+  include_tasks: cert_individual.yml
+  vars:
+    openssl_cert_name: "registry"
+
+# Logstash certificate configuration
+- name: Logstash certificate configuration
+  include_tasks: cert_individual.yml
+  vars:
+    openssl_cert_name: "logstash"
+
+...

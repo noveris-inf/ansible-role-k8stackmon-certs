@@ -1,0 +1,26 @@
+[ req ]
+prompt             = no
+distinguished_name = node
+req_extensions     = req_ext
+
+[ node ]
+commonName = Registry
+countryName = {{ stackmon_certs_country }}
+organizationName = {{ stackmon_certs_org }}
+organizationalUnitName = {{ stackmon_certs_ou }}
+stateOrProvinceName = {{ stackmon_certs_state }}
+
+[ req_ext ]
+subjectAltName = @alt_names
+extendedKeyUsage = serverAuth,clientAuth
+basicConstraints = CA:false
+
+[alt_names]
+DNS.1 = registry
+{% if stackmon_certs_registry_name|default('') != '' %}
+DNS.2 = {{ stackmon_certs_registry_name }}
+{% endif %}
+IP.1 = 127.0.0.1
+{% if stackmon_certs_registry_ip|default('') != '' %}
+IP.2 = {{ stackmon_certs_registry_ip }}
+{% endif %}

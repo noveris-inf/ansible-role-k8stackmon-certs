@@ -1,0 +1,12 @@
+---
+
+#stackmon_certs_location: ""
+#stackmon_certs_ca_file:
+#stackmon_certs_ca_key:
+stackmon_certs_days: 365
+stackmon_certs_country: AU
+stackmon_certs_org: Noveris
+stackmon_certs_ou: IT
+stackmon_certs_state: South Australia
+
+...
