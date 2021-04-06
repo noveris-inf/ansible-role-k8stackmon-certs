@@ -36,6 +36,7 @@
     openssl x509 -in {{ stackmon_certs_location }}/{{ openssl_cert_name }}.csr -CA {{ stackmon_certs_ca_file }}
     -CAkey {{ stackmon_certs_ca_key }} -CAcreateserial -out {{ stackmon_certs_location }}/{{ openssl_cert_name }}.crt
     -extensions req_ext -extfile {{ stackmon_certs_location }}/openssl_{{ openssl_cert_name }}_config
+    -days {{ stackmon_certs_days }}
   register: openssl_cert_generate
 
 - name: "Verify {{ openssl_cert_name }} certificate"
