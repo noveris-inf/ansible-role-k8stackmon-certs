@@ -1,3 +1,3 @@
 # ansible-role-stackmon-certs
 
-[![Latest](https://github.com/noveris-inf/ansible-role-stackmon-certs/workflows/Latest/badge.svg)](https://github.com/noveris-inf/ansible-role-stackmon-certs/actions?query=workflow%3ALatest) [![Versioned](https://github.com/noveris-inf/ansible-role-stackmon-certs/workflows/Versioned/badge.svg)](https://github.com/noveris-inf/ansible-role-stackmon-certs/actions?query=workflow%3AVersioned)
+[![latest](https://github.com/archmachina/ansible-role-stackmon-certs/workflows/latest/badge.svg)](https://github.com/archmachina/ansible-role-stackmon-certs/actions?query=workflow%3Alatest)
